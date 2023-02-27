@@ -1,0 +1,221 @@
+// Wrap(
+//                 spacing: 35, //spasi kesamping
+//                 runSpacing: 10, //spasi kebawah
+//                 direction: Axis.horizontal,
+//                 children: [
+//                   SizedBox(
+//                     width: 90,
+//                     height: 120,
+//                     //color: Colors.brown,
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Container(
+//                           height: 70,
+//                           width: 70,
+//                           //color: Colors.green,
+//                           decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(35),
+//                               gradient: const LinearGradient(
+//                                 begin: Alignment.topCenter,
+//                                 end: Alignment.bottomCenter,
+//                                 colors: [Colors.purple, Colors.orange],
+//                               )),
+//                           child: const Icon(
+//                             Icons.book,
+//                             size: 24.0,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           height: 10.0,
+//                         ),
+//                         const Text(
+//                           "Absensi",
+//                           style: TextStyle(
+//                             fontSize: 14.0,
+//                             fontWeight: FontWeight.bold,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 90,
+//                     height: 120,
+//                     //color: Colors.brown,
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Container(
+//                           height: 70,
+//                           width: 70,
+//                           //color: Colors.green,
+//                           decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(35),
+//                               gradient: const LinearGradient(
+//                                 begin: Alignment.topCenter,
+//                                 end: Alignment.bottomCenter,
+//                                 colors: [Colors.purple, Colors.orange],
+//                               )),
+//                           child: const Icon(
+//                             Icons.beach_access_outlined,
+//                             size: 24.0,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           height: 10.0,
+//                         ),
+//                         const Text(
+//                           "Cuti",
+//                           style: TextStyle(
+//                             fontSize: 14.0,
+//                             fontWeight: FontWeight.bold,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 90,
+//                     height: 120,
+//                     //color: Colors.brown,
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Container(
+//                           height: 70,
+//                           width: 70,
+//                           //color: Colors.green,
+//                           decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(35),
+//                               gradient: const LinearGradient(
+//                                 begin: Alignment.topCenter,
+//                                 end: Alignment.bottomCenter,
+//                                 colors: [Colors.purple, Colors.orange],
+//                               )),
+//                           child: const Icon(
+//                             Icons.work,
+//                             size: 24.0,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           height: 10.0,
+//                         ),
+//                         const Text(
+//                           "Lembur",
+//                           style: TextStyle(
+//                             fontSize: 14.0,
+//                             fontWeight: FontWeight.bold,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 90,
+//                     height: 120,
+//                     //color: Colors.brown,
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Container(
+//                           height: 70,
+//                           width: 70,
+//                           //color: Colors.green,
+//                           decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(35),
+//                               gradient: const LinearGradient(
+//                                 begin: Alignment.topCenter,
+//                                 end: Alignment.bottomCenter,
+//                                 colors: [Colors.purple, Colors.orange],
+//                               )),
+//                           child: const Icon(
+//                             Icons.car_rental_sharp,
+//                             size: 24.0,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           height: 10.0,
+//                         ),
+//                         const Text(
+//                           "P.Dinas",
+//                           style: TextStyle(
+//                             fontSize: 14.0,
+//                             fontWeight: FontWeight.bold,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 90,
+//                     height: 120,
+//                     //color: Colors.brown,
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Container(
+//                           height: 70,
+//                           width: 70,
+//                           //color: Colors.green,
+//                           decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(35),
+//                               gradient: const LinearGradient(
+//                                 begin: Alignment.topCenter,
+//                                 end: Alignment.bottomCenter,
+//                                 colors: [Colors.purple, Colors.orange],
+//                               )),
+//                           child: const Icon(
+//                             Icons.money,
+//                             size: 24.0,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           height: 10.0,
+//                         ),
+//                         const Text(
+//                           "Penggajian",
+//                           style: TextStyle(
+//                             fontSize: 14.0,
+//                             fontWeight: FontWeight.bold,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 90,
+//                     height: 120,
+//                     //color: Colors.brown,
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Container(
+//                           height: 70,
+//                           width: 70,
+//                           //color: Colors.green,
+//                           decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(35),
+//                               gradient: const LinearGradient(
+//                                 colors: [Colors.purple, Colors.orange],
+//                               )),
+//                           child: const Icon(
+//                             Icons.health_and_safety,
+//                             size: 24.0,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           height: 10.0,
+//                         ),
+//                         const Text(
+//                           "Asuransi",
+//                           style: TextStyle(
+//                             fontSize: 14.0,
+//                             fontWeight: FontWeight.bold,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ],
+//               ),

@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+
+import '../controllers/absensi_online_controller.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'package:connectivity_checker/connectivity_checker.dart';
+
+class AbsensiOnlineView extends GetView<AbsensiOnlineController> {
+  const AbsensiOnlineView({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('AbsensiOnlineView'),
+        centerTitle: true,
+      ),
+      body: ConnectivityWidgetWrapper(
+        child: GetBuilder(
+          init: controller,
+          builder: (ctrl) => GoogleMap(
+            initialCameraPosition: ctrl.kGooglePlex,
+            onMapCreated: ctrl.onGmapCreated,
+            zoomControlsEnabled: false,
+            myLocationEnabled: true,
+            myLocationButtonEnabled: false,
+          ),
+        ),
+      ),
+    );
+  }
+}

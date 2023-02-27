@@ -1,0 +1,83 @@
+import 'package:absensi_jidoka/app/routes/app_pages.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+
+import '../controllers/dashboard_profile_controller.dart';
+
+class DashboardProfileView extends GetView<DashboardProfileController> {
+  const DashboardProfileView({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Hal Profile'),
+        centerTitle: true,
+      ),
+      body: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+          stream: controller.streamUser(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              Map<String, dynamic> user =
+                  snapshot.data!.data()!; //ada datanya !
+
+              String defaultImage =
+                  "https://ui-avatars.com/api/?name=$user['nama']";
+
+              return ListView(
+                scrollDirection: Axis.vertical,
+                padding: const EdgeInsets.all(20),
+                children: [
+                  ListTile(
+                    leading: const Icon(
+                      Icons.refresh,
+                      size: 24.0,
+                    ),
+                    title: const Text("Update Profil"),
+                    //butuh arguments sbg parameter id
+                    onTap: () {
+                      Get.toNamed(Routes.UPDATE_PROFILE, arguments: user);
+                    },
+                  ),
+                  //role admin yang hanya bisa akses ini
+                  ListTile(
+                    leading: const Icon(
+                      Icons.add,
+                      size: 24.0,
+                    ),
+                    title: const Text("Tambah Pegawai"),
+                    onTap: () {
+                      Get.toNamed(Routes.TAMBAH_PEGAWAI);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.logout,
+                      size: 24.0,
+                    ),
+                    title: const Text("Logout"),
+                    onTap: () async {
+                      await FirebaseAuth.instance.signOut();
+                      Get.offAllNamed(Routes.LOGIN);
+
+                      // Get.toNamed(Routes.LOGIN); //sementara
+                    },
+                  ),
+                ],
+              );
+            } else {
+              return const Center(
+                child: Text(
+                  "Tidak ada data",
+                  style: TextStyle(
+                    fontSize: 13.0,
+                  ),
+                ),
+              );
+            }
+          }),
+    );
+  }
+}

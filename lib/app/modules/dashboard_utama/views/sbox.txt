@@ -1,0 +1,101 @@
+StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                        stream: controller.streamRole(),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return const CircularProgressIndicator();
+                          }
+                          //pertama ambil rolenya dulu dari fbase, sudah pasti ada datanya
+                          //String role = snapshot.data!.data()!["role"];
+
+                          if (snapshot.hasData) {
+                            //harus ada elsenya
+                            Map<String, dynamic> datapeg = snapshot.data!.data()!;
+
+                            String defaultImage =
+                                "https://ui-avatars.com/api/?name=$datapeg['nama']";
+                            return Container(
+                              height: 240,
+                              width: 330,
+                              //color: Colors.grey[300],
+                              padding: const EdgeInsets.all(22),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(23),
+                                  //color: const Color.fromARGB(255, 221, 213, 213)
+                                  gradient: LinearGradient(colors: [
+                                    Colors.green.shade200,
+                                    Colors.grey.shade200
+                                  ])),
+                              child: Column(
+                                //pasang align di kiri
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                  Row(
+                                    children: [
+                                      ClipOval(
+                                        //
+                                        child: Container(
+                                          //width nya tetap 100% karena berada di listview,
+                                          //maka dari itu bungkus container dengan row
+                                          width: 90,
+                                          height: 90,
+                                          color: Colors.grey[300],
+                                          child: Center(
+                                            child: Image.asset(
+                                              "assets/cowok.jpg",
+                                              width: 64.0,
+                                              height: 64.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            //     Image.network(
+                                            //   "https://i.pinimg.com/originals/dd/a2/a3/dda2a32f73df13df918c730e35ac3705.jpg",
+                                            //   fit: BoxFit.cover,
+                                            // )
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10.0,
+                                      ),
+                                      Text(
+                                        //dapatin data departemen dari snapshot stream
+                                        "${datapeg['nama']}",
+                                        style: const TextStyle(
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 15.0,
+                                  ),
+                                  Text(
+                                    "${datapeg['nip']}",
+                                    style: const TextStyle(
+                                        fontSize: 32.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const SizedBox(
+                                    height: 15.0,
+                                  ),
+                                  Text(
+                                    "${datapeg['jabatan']}",
+                                    style: const TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ],
+                              ),
+                            );
+                          } else {
+                            return const Center(
+                              child: Text(
+                                "Tidak ada Data User",
+                                style: TextStyle(
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            );
+                          }
+                        });

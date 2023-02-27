@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336220922054",
+    "project_id": "absensi-jidoka",
+    "storage_bucket": "absensi-jidoka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336220922054:android:84c1ebb9603e5fd80bf7c7",
+        "android_client_info": {
+          "package_name": "com.example.absensi_jidoka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336220922054-d90iu4jnrbdc4l1olrg8egd77d7pbgdf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAg0DMWnHm0rEuPrHsHilplWY7NFCWjEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336220922054-d90iu4jnrbdc4l1olrg8egd77d7pbgdf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
